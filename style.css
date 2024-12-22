@@ -1,0 +1,191 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #9c9cd6;
+    color: #fff;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    align-items: flex-;
+    gap: 80px; /* Space between navigation and info-box */
+}
+
+/* Navigation List */
+ul {
+    list-style: none;
+}
+
+/* List Items */
+li {
+    position: relative;
+    list-style: none;
+    width: 200px;
+    padding: 15px;
+    background: #3e3f46;
+    margin-bottom: 10px;
+    z-index: calc(1 * var(--i));
+    transition: 0.5s;
+}
+
+/* Hover Effects on List Items */
+li:hover {
+    background: #996fae;
+    transform: translateX(-50px);
+}
+
+/* Font Awesome Icon */
+li::before {
+    font-family: "FontAwesome";
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: attr(data-icon);
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #2e3133;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+
+/* Hover Effects on Icon */
+li:hover::before {
+    background: #7b5190;
+}
+
+/* Top Shadow for List Items */
+li::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #35383e;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+
+/* Hover Effects on Shadow */
+li:hover::after {
+    background: #7b5190;
+}
+
+/* Anchor Tags */
+li a {
+    text-decoration: none;
+    color: #c2bcbc;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+/* Hover Effects on Anchor Tags */
+li:hover a {
+    color: #fff;
+}
+
+/* Shadow Effect for Last Child */
+li:last-child::after {
+    box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Info Box Styling */
+.info-box {
+    background: #122178;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    color: #fff;
+    width: 20em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    
+}
+
+.info-box p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    /* Body */
+    body {
+        flex-direction: column;
+        padding: 80px;
+        
+    }
+
+    /* Container */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+        margin-top: -20px;
+    }
+
+    /* Navigation List */
+    ul {
+        width: 100%;
+    }
+
+    /* List Items */
+    li {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    li::before {
+        left: -30px;
+        width: 30px;
+    }
+
+    li a {
+        font-size: 14px;
+    }
+
+    /* Info Box */
+    .info-box {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .info-box h2 {
+        font-size: 20px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
